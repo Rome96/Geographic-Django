@@ -9,7 +9,8 @@
 
 {% for country in countries %}
 
-<p>{{ country }}</p>
+<p>{{country.name|title}}</p>
+<p>{{country.code}}</p>
 
 {% endfor %}
 <hr>
