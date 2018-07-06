@@ -1,14 +1,13 @@
 {% extends "countries/base.html" %}
+<h1>{% block title %}HOME{%endblock%}</h1>
 {% block content %}
-
-<h1>Hola Humanos!</h1>
+<h3>Hola Humanos!</h3>
 
 {% for country in countries %}
-<p>{{country.name|title}}</p>
-<p>{{country.code}}</p>
+{% include "countries/country.html" %}
 {% endfor %}
 
-<p>{% lorem 5 w random %}</p>
+<p>{% lorem 300 w random %}</p>
 {{request.user}}
 <p>Fecha: {% now "Y-m-d" %}</p>
 <hr>

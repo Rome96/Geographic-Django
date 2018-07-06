@@ -9,5 +9,5 @@ class HomeView(TemplateView):
 	   # return render(request, "countries/home.html")
 	
 
-class ListView(TemplateView):
-	template_name = 'countries/list.html'
+class TagsView(TemplateView):
+	template_name = 'countries/tags.html'
