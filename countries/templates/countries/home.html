@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Turi</title>
-</head>
-<body>
+{% extends "countries/base.html" %}
+{% block content %}
 
 <h1>Hola Humanos!</h1>
 
 {% for country in countries %}
-
 <p>{{country.name|title}}</p>
 <p>{{country.code}}</p>
-
 {% endfor %}
+
+<p>{% lorem 5 w random %}</p>
+{{request.user}}
+<p>Fecha: {% now "Y-m-d" %}</p>
 <hr>
-</body>
-</html>
+{%endblock%}

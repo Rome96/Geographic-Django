@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>LIsta</title>
-</head>
-<body>
+{% extends "countries/base.html" %}
+{% block content %}
+
 <h1>Listaaaa</h1>
 <hr>
 <h3>Elemplo</h3>
@@ -13,6 +10,14 @@
 	<li>dos</li>
 	<li>tres</li>
 	<li>...</li>
+	{% for country in countries %}
+<p>{{country.name|title}}</p>
+<p>{{country.code}}</p>
+{% endfor %}
+
+<p>{% lorem 5 w random %}</p>
+{{request.user}}
+<p>Fecha: {% now "Y-m-d" %}</p>
+<hr>
 </ul>
-</body>
-</html>
+{%endblock%}
