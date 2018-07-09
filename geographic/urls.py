@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from countries.views import HomeView, TagsView #importar la vistas de countries
+from countries.views import (
+    HomeView, TagsView, CountryDetailView, CountryIdDetailView
+) #importar la vistas de countries
 from continents.views import ContinentsView
 
 urlpatterns = [
@@ -23,4 +25,7 @@ urlpatterns = [
     path("", HomeView.as_view()),
     path("tags", TagsView.as_view()),
     path("continents", ContinentsView.as_view()),
+    path('countries/<int:id>/', CountryIdDetailView.as_view()),
+    path('countries/<code>/', CountryDetailView.as_view())
+    
 ]
