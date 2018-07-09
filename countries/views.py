@@ -10,4 +10,4 @@ class HomeView(TemplateView):
 	
 
 class TagsView(TemplateView):
-	template_name = 'countries/tags.html'
+	template_name = 'countries/tags.html' 
