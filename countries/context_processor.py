@@ -1,7 +1,5 @@
-def countries_data(request):
-	colombia = {'name': 'colombia', 'code': 'CO', 'id': 1}
-	usa = {'name': 'estados unidos', 'code': 'USA', 'id': 2}
-	mexico = {'name': 'mexico', 'code': 'MX', 'id': 3}
+from countries.models import Country
 
-	countries = [colombia, usa, mexico]
+def countries_data(request):
+	countries = Country.objects.all()
 	return {'countries': countries}
