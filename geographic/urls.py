@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from countries.views import (
     HomeView, TagsView, CountryDetailView, CountryIdDetailView
 ) #importar la vistas de countries
@@ -24,8 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", HomeView.as_view(), name="home"), #name, permite colocar nombres a las url
     path("tags", TagsView.as_view(), name="tags"),
-    path("continents", ContinentsView.as_view(), name="continents_home"),
-    path('countries/<int:id>/', CountryIdDetailView.as_view(), name="country_id_detail"),
-    path('countries/<code>/', CountryDetailView.as_view(), name="country_code_detail")
-    
+    path("continents", include("continents.urls", namespace="continents")),
+    path("countries", include("countries.urls")),
 ]
