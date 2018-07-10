@@ -22,10 +22,10 @@ from continents.views import ContinentsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", HomeView.as_view()),
-    path("tags", TagsView.as_view()),
-    path("continents", ContinentsView.as_view()),
-    path('countries/<int:id>/', CountryIdDetailView.as_view()),
-    path('countries/<code>/', CountryDetailView.as_view())
+    path("", HomeView.as_view(), name="home"), #name, permite colocar nombres a las url
+    path("tags", TagsView.as_view(), name="tags"),
+    path("continents", ContinentsView.as_view(), name="continents_home"),
+    path('countries/<int:id>/', CountryIdDetailView.as_view(), name="country_id_detail"),
+    path('countries/<code>/', CountryDetailView.as_view(), name="country_code_detail")
     
 ]

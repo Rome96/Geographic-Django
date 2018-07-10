@@ -8,8 +8,8 @@
   {% include "countries/country.html" %}
 {% endfor %}
 
-<p>{% lorem 300 w random %}</p>
-{{request.user}}
-<p>Fecha: {% now "Y-m-d" %}</p>
+<p> <a href="{% url "tags" %}">ir a tags</a></p>
+<p> <a href="{% url "continents_home" %}">ir a continents</a></p>
+<p> <a href="{% url "country_id_detail" id=1 %}">ir a country con id 1</a></p>
 <hr>
 {%endblock%}
