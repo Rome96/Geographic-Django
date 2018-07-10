@@ -1,12 +1,14 @@
 {% extends "countries/base.html" %}
-{% block content %}
-<h1>Continents</h1>
-{% for continent in continents %}
-<hr>
-{% include 'continents/continent.html' %}
-<hr>
-{%endfor%}
-<p>{% lorem 300 w random %}</p>
-{{request.user}}
-<p>Fecha: {% now "Y-m-d" %}</p>
-{%endblock%}
+ {% block content %}
+	<h1>Continents</h1>
+	
+	{% for continent in continents %}
+	  <hr>
+	  {% include 'continents/continent.html' %}
+	  <hr>
+	{%endfor%}
+
+	<p>{% lorem 300 w random %}</p>
+	{{request.user}}
+	<p>Fecha: {% now "Y-m-d" %}</p>
+ {%endblock%}
