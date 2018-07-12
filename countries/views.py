@@ -33,4 +33,4 @@ class CountrySearchView(ListView):
     model = Country
 
     def get_queryset(self):
-        return Country.objects.filter(name__contains="a")
+        return Country.objects.filter(name__contains="e")

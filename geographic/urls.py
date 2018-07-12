@@ -22,8 +22,8 @@ from continents.views import ContinentsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", HomeView.as_view(), name="home"), #name, permite colocar nombres a las url
-    path("tags", TagsView.as_view(), name="tags"),
-    path("continents", include("continents.urls", namespace="continents")),
-    path("countries", include("countries.urls")),
+    path('', HomeView.as_view(), name="home"), #name, permite colocar nombres a las url
+    path('tags/', TagsView.as_view(), name="tags"),
+    path('continents/', include("continents.urls", namespace="continents")),
+    path('countries/', include("countries.urls")),
 ]
