@@ -1,8 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
 from django.views.generic import TemplateView
 from countries.models import Country
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 # Create your views here.
 
 class HomeView(TemplateView):
@@ -17,12 +18,9 @@ class CountryDetailView(TemplateView):
 		code = kwargs ['code']
 		return {'code': code}
 
-class CountryIdDetailView(TemplateView):
+class CountryIdDetailView(DetailView):
 	template_name = 'countries/country_id_detail.html'
-
-	def get_contex_data(self, *args, **kwargs):
-		code_id = kwargs ['id']
-		return {'id': code_id}	
+	model = Country
 		
 
 class TagsView(TemplateView):
