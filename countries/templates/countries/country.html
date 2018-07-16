@@ -3,5 +3,5 @@
 {% if country.name == 'colombia' %} 
 yeah: {{country.code}}
 {% endif %}
-<p><a href=" {{country.detail_url}} ">detalles</a></p>
+<p><a href=" {% url 'country_id_detail' pk=country.id %} ">detalles</a></p>
  <hr><hr>

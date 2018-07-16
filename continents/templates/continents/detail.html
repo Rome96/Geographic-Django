@@ -1,0 +1,5 @@
+{% extends "continents/base.html" %}
+{% block content %}
+	{% include "continents/continent.html" with continent=object %}
+	<p><a href="{% url 'continents:home' %}">Listado</a></p>
+{% endblock content %}

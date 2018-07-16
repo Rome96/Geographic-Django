@@ -1,10 +1,10 @@
 {% extends 'countries/base.html' %}
 {% block content %}
-
+ <h1>{{ code }}</h1>
   {% for country in countries %}
   
 	  {% if country.code == code %}
-	    {% include 'countries/country.html' %}
+	    {% include 'countries/country.html' with country=object %}
 	  {% endif %}
 
   {% endfor %}
