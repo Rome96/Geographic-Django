@@ -4,10 +4,8 @@
 {% block content %}
 
 <form action="." method="post">
-	{{form}}
 	{% csrf_token %}
-	<label for="first_name">First Name</label> 
-	<input type="text" name="first_name" value="">
+	{{form}}
 	<input type="submit" name="" value="registro">
 </form>
 
