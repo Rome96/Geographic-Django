@@ -11,6 +11,6 @@ class Country(models.Model):
 	code = models.CharField(max_length=5)
 	continent = models.ForeignKey('continents.Continent', on_delete=models.CASCADE)
 
-def __str__(self):
-    return self.name
+	def __str__(self):
+		return self.name
 		

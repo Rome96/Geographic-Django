@@ -7,3 +7,4 @@ urlpatterns = [
     path('<code>/', CountryDetailView.as_view(), name="country_code_detail")
     
 ]
+    
