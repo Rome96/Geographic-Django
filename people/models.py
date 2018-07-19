@@ -5,4 +5,5 @@ class Person(models.Model):
 	nacionality = models.ManyToManyField('countries.Country') #Relaciones muchos a muchos
 	father = models.OneToOneField('self', on_delete=models.CASCADE, null=True) #Relaciones uno a uno, null=True -> campo no obligatorio
 
-	
+	def __str__(self):
+		return self.first_name
