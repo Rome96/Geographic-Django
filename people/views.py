@@ -6,7 +6,7 @@ from people.models import Person
 
 def register(request):
 	fathers = Person.objects.filter(children__isnull=True)
-	form = RegisterForm(fathers, request.POST or None) # or None para validad que el campo no entre vacio
+	form = RegisterForm(request.POST or None) # or None para validad que el campo no entre vacio
 	
 	if form.is_valid():
 		data = form.cleaned_data
